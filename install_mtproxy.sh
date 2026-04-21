@@ -218,11 +218,4 @@ echo -e "${YELLOW}📊 Команды управления:${NC}"
 echo -e "docker logs -f mtproxy    # Просмотр логов"
 echo -e "docker exec mtproxy cat /data/stats  # Статистика"
 echo ""
-
-# Вопрос о проверке порта
-read -p "Проверить доступность порта? (y/n): " check_port
-if [[ "$check_port" == "y" ]]; then
-    if command -v nc &> /dev/null; then
-        nc -zv $SERVER_IP $PROXY_PORT 2>&1
-    fi
-fi
+exit 0 
